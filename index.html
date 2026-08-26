@@ -1,290 +1,1022 @@
-<!-- ARCHITECTURE SECTION -->
-<section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="section-header">
-        <div class="tag">ASI Architecture</div>
+    <title>THE ASI — Artificial Superintelligence</title>
 
-        <h2>
-            Three Layers.
-            <span class="gradient-text">Nine Dimensions.</span>
-        </h2>
+    <meta
+        name="description"
+        content="THE ASI — Exploring the emerging architecture of artificial superintelligence."
+    >
 
-        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 8px;">
-            A conceptual architecture exploring the emerging dimensions of artificial superintelligence.
-        </p>
+    <meta name="theme-color" content="#05070D">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        :root {
+            --bg: #05070D;
+            --panel: rgba(12, 16, 27, 0.74);
+            --line: rgba(255, 255, 255, 0.08);
+
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+
+            --accent-blue: #38BDF8;
+            --accent-purple: #A855F7;
+            --accent-green: #10B981;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(56, 189, 248, 0.10),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 45%,
+                    rgba(168, 85, 247, 0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(16, 185, 129, 0.06),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--text-primary);
+
+            font-family: 'Plus Jakarta Sans', sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        .mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    120deg,
+                    #38BDF8 0%,
+                    #A855F7 50%,
+                    #10B981 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .glass {
+            background: var(--panel);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border: 1px solid var(--line);
+        }
+
+
+        .grid-bg {
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 48px 48px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black 0%,
+                    transparent 75%
+                );
+
+            -webkit-mask-image:
+                linear-gradient(
+                    to bottom,
+                    black 0%,
+                    transparent 75%
+                );
+        }
+
+
+        .orb {
+            position: absolute;
+
+            width: 460px;
+            height: 460px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(168, 85, 247, 0.11),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .card {
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
+        }
+
+
+        .card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(168, 85, 247, 0.35);
+
+            background:
+                rgba(17, 22, 37, 0.90);
+        }
+
+
+        .logo-box {
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,0.045),
+                    rgba(0,0,0,0.36)
+                );
+        }
+
+
+        .fade-up {
+            animation:
+                fadeUp 0.9s ease both;
+        }
+
+
+        .fade-up-delay {
+            animation:
+                fadeUp 1s 0.15s ease both;
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @media (max-width: 640px) {
+
+            .orb {
+                width: 280px;
+                height: 280px;
+            }
+
+            .grid-bg {
+                background-size: 32px 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="min-h-screen">
+
+
+    <!-- BACKGROUND -->
+
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+
+        <div class="grid-bg absolute inset-0"></div>
+
+        <div
+            class="orb"
+            style="
+                top: -230px;
+                left: 50%;
+                transform: translateX(-50%);
+            "
+        ></div>
+
     </div>
 
 
-    <!-- LAYER 1 -->
-    <div style="margin-bottom: 40px;">
 
-        <div class="tag"
-             style="color: var(--accent-blue); margin-bottom: 16px;">
-            Layer I / Intelligence
-        </div>
+    <!-- HEADER -->
 
-        <div class="grid">
+    <header class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-6">
 
-            <!-- 01 / ASI Mind -->
-            <div class="card">
-                <img src="asi-mind.png"
-                     alt="ASI Mind"
-                     class="card-img">
+        <div class="flex items-center justify-between">
 
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        01 / Cognition
-                    </div>
-
-                    <div class="card-title">
-                        ASI Mind
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring the cognitive frontier of artificial
-                        superintelligence — advanced reasoning, abstraction,
-                        learning, and machine thought.
-                    </div>
-
-                </div>
+            <div
+                class="text-2xl sm:text-3xl font-extrabold tracking-[0.18em]"
+            >
+                THE ASI<span class="text-purple-400">.</span>
             </div>
 
 
-            <!-- 02 / ASI Wake -->
-            <div class="card">
-                <img src="asi-wake.png"
-                     alt="ASI Wake"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        02 / Awakening
-                    </div>
-
-                    <div class="card-title">
-                        ASI Wake
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring the threshold between computation and
-                        cognition — and the unanswered questions surrounding
-                        machine awareness.
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- 03 / ASI Deep -->
-            <div class="card">
-                <img src="asi-deep.png"
-                     alt="ASI Deep"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        03 / Depth
-                    </div>
-
-                    <div class="card-title">
-                        ASI Deep
-                    </div>
-
-                    <div class="card-desc">
-                        Beyond conventional learning — exploring deeper
-                        reasoning, complex relationships, abstraction,
-                        and multidimensional patterns.
-                    </div>
-
-                </div>
+            <div
+                class="mono text-[9px] sm:text-[10px] tracking-[0.22em] uppercase text-slate-400 text-right"
+            >
+                Artificial Superintelligence
             </div>
 
         </div>
-    </div>
+
+    </header>
 
 
-    <!-- LAYER 2 -->
-    <div style="margin-bottom: 40px;">
 
-        <div class="tag"
-             style="color: var(--accent-purple); margin-bottom: 16px;">
-            Layer II / Connection
+    <!-- MAIN -->
+
+    <main class="relative z-10">
+
+
+        <!-- HERO -->
+
+        <section
+            class="max-w-6xl mx-auto px-5 sm:px-8 pt-20 sm:pt-28 pb-24 text-center"
+        >
+
+            <div class="fade-up">
+
+
+                <div
+                    class="mono inline-flex items-center gap-2 text-[10px] sm:text-xs tracking-[0.3em] uppercase text-slate-400 mb-7"
+                >
+
+                    <span
+                        class="w-1.5 h-1.5 rounded-full bg-purple-400"
+                    ></span>
+
+                    The Frontier Beyond Intelligence
+
+                </div>
+
+
+
+                <h1
+                    class="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-[-0.045em] leading-[0.94]"
+                >
+
+                    Artificial
+
+                    <br>
+
+                    <span class="gradient-text">
+                        Superintelligence.
+                    </span>
+
+                </h1>
+
+
+
+                <p
+                    class="mt-8 text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
+                >
+
+                    THE ASI explores the emerging frontier beyond artificial
+                    intelligence — a conceptual space shaped by advanced
+                    cognition, connection, expansion, and the unknown.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- PHILOSOPHY -->
+
+            <div class="fade-up-delay mt-12 sm:mt-14">
+
+                <div
+                    class="glass rounded-2xl max-w-3xl mx-auto px-6 py-7 sm:px-10 sm:py-9"
+                >
+
+                    <p
+                        class="text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed"
+                    >
+
+                        “The next frontier is not simply
+                        <span class="gradient-text">
+                            more intelligence.
+                        </span>
+                        It is what intelligence becomes.”
+
+                    </p>
+
+
+                    <p
+                        class="mono text-[10px] sm:text-xs tracking-[0.18em] uppercase text-slate-500 mt-5"
+                    >
+                        The idea behind THE ASI
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONCEPT -->
+
+        <section
+            class="max-w-4xl mx-auto px-5 sm:px-8 pb-24"
+        >
+
+            <div class="text-center">
+
+
+                <div
+                    class="mono text-[10px] sm:text-xs tracking-[0.3em] uppercase text-purple-400 mb-5"
+                >
+                    The Concept
+                </div>
+
+
+                <h2
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
+                >
+                    Beyond Artificial Intelligence
+                </h2>
+
+
+                <p
+                    class="mt-7 text-slate-300 text-base sm:text-lg leading-8"
+                >
+
+                    Artificial superintelligence represents a theoretical
+                    frontier in which machine intelligence could extend far
+                    beyond today's capabilities.
+
+                </p>
+
+
+                <p
+                    class="mt-5 text-slate-400 text-base sm:text-lg leading-8"
+                >
+
+                    THE ASI is a conceptual exploration of that frontier —
+                    its possible architecture, dimensions, opportunities,
+                    uncertainties, and unanswered questions.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ARCHITECTURE -->
+
+        <section
+            class="max-w-7xl mx-auto px-5 sm:px-8 pb-28"
+        >
+
+
+            <div class="text-center mb-12 sm:mb-16">
+
+
+                <div
+                    class="mono text-[10px] sm:text-xs tracking-[0.3em] uppercase text-emerald-400 mb-5"
+                >
+                    ASI Architecture
+                </div>
+
+
+                <h2
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
+                >
+
+                    Three Layers.
+
+                    <span class="gradient-text">
+                        One Emerging Architecture.
+                    </span>
+
+                </h2>
+
+
+                <p
+                    class="mt-5 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
+                >
+
+                    A conceptual framework exploring different dimensions
+                    of artificial superintelligence.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ========================= -->
+            <!-- LAYER I -->
+            <!-- ========================= -->
+
+            <div class="mb-16">
+
+
+                <div
+                    class="mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-blue-400 mb-5"
+                >
+                    Layer I / Intelligence
+                </div>
+
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+                >
+
+
+                    <!-- ASI MIND -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-mind.png"
+                                alt="ASI Mind"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-purple-400 mb-3"
+                            >
+                                01 / COGNITION
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Mind
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring advanced machine cognition,
+                                reasoning, abstraction, learning, and the
+                                boundaries of synthetic thought.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ASI WAKE -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-wake.png"
+                                alt="ASI Wake"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-blue-400 mb-3"
+                            >
+                                02 / AWAKENING
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Wake
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring the threshold between computation
+                                and cognition, and the unresolved questions
+                                surrounding machine awareness.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ASI DEEP -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-deep.png"
+                                alt="ASI Deep"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-emerald-400 mb-3"
+                            >
+                                03 / DEPTH
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Deep
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring deeper reasoning, abstraction,
+                                complex relationships, and multidimensional
+                                patterns beyond conventional learning.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================= -->
+            <!-- LAYER II -->
+            <!-- ========================= -->
+
+            <div class="mb-16">
+
+
+                <div
+                    class="mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-purple-400 mb-5"
+                >
+                    Layer II / Connection & Expansion
+                </div>
+
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+                >
+
+
+                    <!-- ASI FOLD -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-fold.png"
+                                alt="ASI Fold"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-purple-400 mb-3"
+                            >
+                                04 / COMPLEXITY
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Fold
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring how complex systems, variables,
+                                possibilities, and layers of information
+                                may converge within superintelligent systems.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ASI THREAD -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-thread.png"
+                                alt="ASI Thread"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-blue-400 mb-3"
+                            >
+                                05 / NETWORK
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Thread
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring connections between intelligent
+                                systems, agents, networks, and distributed
+                                forms of machine intelligence.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ASI BLOOM -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-bloom.png"
+                                alt="ASI Bloom"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-emerald-400 mb-3"
+                            >
+                                06 / EXPANSION
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Bloom
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring the expansion of superintelligent
+                                capabilities across scientific, creative,
+                                technological, and societal domains.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================= -->
+            <!-- LAYER III -->
+            <!-- ========================= -->
+
+            <div class="mb-16">
+
+
+                <div
+                    class="mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-emerald-400 mb-5"
+                >
+                    Layer III / Frontier
+                </div>
+
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+                >
+
+
+                    <!-- ASI DARK -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-dark.png"
+                                alt="ASI Dark"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-purple-400 mb-3"
+                            >
+                                07 / UNKNOWN
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Dark
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring the unknown — opaque reasoning,
+                                non-human cognition, emergent behavior,
+                                and the limits of human understanding.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ASI MATTER -->
+
+                    <article
+                        class="card glass rounded-2xl overflow-hidden"
+                    >
+
+                        <div
+                            class="logo-box h-48 sm:h-52 flex items-center justify-center p-6"
+                        >
+
+                            <img
+                                src="asi-matter.png"
+                                alt="ASI Matter"
+                                class="max-h-full max-w-full object-contain"
+                            >
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <div
+                                class="mono text-[10px] tracking-[0.22em] text-blue-400 mb-3"
+                            >
+                                08 / MATERIALIZATION
+                            </div>
+
+
+                            <h3 class="text-xl font-bold mb-3">
+                                ASI Matter
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-400 leading-6"
+                            >
+                                Exploring the bridge between intelligence
+                                and the physical world — materials, robotics,
+                                biology, physics, and advanced engineering.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FINAL QUESTION -->
+
+        <section
+            class="max-w-5xl mx-auto px-5 sm:px-8 pb-28"
+        >
+
+            <div
+                class="glass rounded-3xl px-6 py-12 sm:px-12 sm:py-16 text-center relative overflow-hidden"
+            >
+
+
+                <div
+                    class="absolute inset-0 pointer-events-none bg-gradient-to-b from-purple-500/5 via-transparent to-blue-500/5"
+                ></div>
+
+
+                <div class="relative">
+
+
+                    <div
+                        class="mono text-[10px] sm:text-xs tracking-[0.3em] uppercase text-slate-500 mb-6"
+                    >
+                        The Frontier
+                    </div>
+
+
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+                    >
+
+                        What happens
+
+                        <span class="gradient-text">
+                            beyond intelligence?
+                        </span>
+
+                    </h2>
+
+
+                    <p
+                        class="mt-7 text-slate-300 max-w-2xl mx-auto leading-7 sm:leading-8 text-sm sm:text-base"
+                    >
+
+                        THE ASI is an exploration of that question —
+                        a conceptual architecture for thinking about the
+                        possibilities, boundaries, and unknown dimensions
+                        of artificial superintelligence.
+
+                    </p>
+
+
+                    <div
+                        class="mt-10 mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-slate-500"
+                    >
+                        THE ASI / Artificial Superintelligence
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer
+        class="relative z-10 border-t border-white/5"
+    >
+
+        <div
+            class="max-w-7xl mx-auto px-5 sm:px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-3"
+        >
+
+
+            <div
+                class="text-sm font-semibold tracking-widest"
+            >
+                THE ASI<span class="text-purple-400">.</span>
+            </div>
+
+
+            <div
+                class="mono text-[9px] sm:text-[10px] tracking-[0.15em] text-slate-600 uppercase text-center"
+            >
+                Exploring the frontier of artificial superintelligence
+            </div>
+
+
+            <div
+                class="mono text-[9px] sm:text-[10px] text-slate-600"
+            >
+                © 2026
+            </div>
+
+
         </div>
 
-        <div class="grid">
-
-            <!-- 04 / ASI Fold -->
-            <div class="card">
-                <img src="asi-fold.png"
-                     alt="ASI Fold"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        04 / Complexity
-                    </div>
-
-                    <div class="card-title">
-                        ASI Fold
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring how complex systems, variables, and
-                        possibilities can converge within a superintelligent
-                        framework.
-                    </div>
-
-                </div>
-            </div>
+    </footer>
 
 
-            <!-- 05 / ASI Thread -->
-            <div class="card">
-                <img src="asi-thread.png"
-                     alt="ASI Thread"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        05 / Network
-                    </div>
-
-                    <div class="card-title">
-                        ASI Thread
-                    </div>
-
-                    <div class="card-desc">
-                        Connecting intelligence across systems, agents,
-                        networks, and knowledge — exploring the architecture
-                        of distributed superintelligence.
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- 06 / ASI Bloom -->
-            <div class="card">
-                <img src="asi-bloom.png"
-                     alt="ASI Bloom"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        06 / Expansion
-                    </div>
-
-                    <div class="card-title">
-                        ASI Bloom
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring the expansion of machine intelligence
-                        across scientific, creative, technological, and
-                        societal domains.
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- LAYER 3 -->
-    <div style="margin-bottom: 60px;">
-
-        <div class="tag"
-             style="color: var(--accent-green); margin-bottom: 16px;">
-            Layer III / Frontier
-        </div>
-
-        <div class="grid">
-
-            <!-- 07 / ASI Dark -->
-            <div class="card">
-                <img src="asi-dark.png"
-                     alt="ASI Dark"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        07 / Unknown
-                    </div>
-
-                    <div class="card-title">
-                        ASI Dark
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring the unknown — opaque reasoning,
-                        non-human cognition, emergent behavior, and the
-                        boundaries of what can be understood.
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- 08 / ASI Matter -->
-            <div class="card">
-                <img src="asi-matter.png"
-                     alt="ASI Matter"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        08 / Materialization
-                    </div>
-
-                    <div class="card-title">
-                        ASI Matter
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring the bridge between intelligence and the
-                        physical world — from materials and robotics to
-                        biology and advanced engineering.
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- 09 / AGI Void -->
-            <div class="card">
-                <img src="agi-void.png"
-                     alt="AGI Void"
-                     class="card-img">
-
-                <div class="card-body">
-
-                    <div class="card-meta">
-                        09 / Transition
-                    </div>
-
-                    <div class="card-title">
-                        AGI Void
-                    </div>
-
-                    <div class="card-desc">
-                        Exploring the conceptual space between artificial
-                        general intelligence and superintelligence — the
-                        unknown territory beyond general capability.
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</section>
+</body>
+</html>
