@@ -169,17 +169,17 @@
     /* NAVIGATION LINKS */
     .nav-links {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
     .nav-links a {
       font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       color: #94a3b8;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-decoration: none;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 40px;
       transition: all 0.3s ease;
@@ -190,6 +190,15 @@
       border-color: rgba(168, 85, 247, 0.4);
       background: rgba(168, 85, 247, 0.08);
       box-shadow: 0 0 20px rgba(168, 85, 247, 0.06);
+    }
+    .nav-links a.genesis-link {
+      color: #10B981;
+      border-color: rgba(16, 185, 129, 0.25);
+    }
+    .nav-links a.genesis-link:hover {
+      border-color: rgba(16, 185, 129, 0.6);
+      background: rgba(16, 185, 129, 0.08);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.06);
     }
 
     /* MANIFESTO */
@@ -237,20 +246,26 @@
 
     .footer-links {
       display: flex;
-      gap: 20px;
+      gap: 16px;
       flex-wrap: wrap;
     }
     .footer-links a {
       font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       color: #64748b;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     .footer-links a:hover {
       color: #ffffff;
+    }
+    .footer-links a.genesis-link {
+      color: #10B981;
+    }
+    .footer-links a.genesis-link:hover {
+      color: #34D399;
     }
 
     @media (max-width: 640px) {
@@ -298,8 +313,9 @@
           Artificial Superintelligence
         </div>
         <div class="nav-links">
+          <a href="https://www.themindgenesis.com/" target="_blank" class="genesis-link">TMG</a>
           <a href="https://www.theagimind.com/" target="_blank">AGI</a>
-          <a href="https://www.awimind.com/" target="_blank">AWI</a>
+          <a href="https://www.theawimind.com/" target="_blank">AWI</a>
         </div>
       </div>
     </div>
@@ -642,6 +658,7 @@
           Exploring the frontier of artificial superintelligence
         </div>
         <div class="footer-links">
+          <a href="https://www.themindgenesis.com/" target="_blank" class="genesis-link">TMG</a>
           <a href="https://www.theagimind.com/" target="_blank">AGI</a>
           <a href="https://www.theawimind.com/" target="_blank">AWI</a>
         </div>
